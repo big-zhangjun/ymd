@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>七夕快乐，天天开心~</title>
+    <!--引入fullpage.js插件的样式，必须-->
+    <!-- <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.css"
+    /> -->
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/fullpage.min.js"></script>
+    <script src="js/typing.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <link rel="stylesheet" href="./css/animation.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <!-- bgm -->
+    <audio
+      id="musicStar"
+      src="https://zino-common.oss-cn-beijing.aliyuncs.com/minib/bgm.mp3"
+      autoplay="true"
+      preload="auto"
+      loop="loop"
+    ></audio>
+    <div class="animate-wrapper rotate">
+      <img src="./img/audio.png" alt="" />
+    </div>
+
+    <!-- 加载 -->
+    <div class="loadIng" id="loading">
+      <img src="./img/loading2.gif" alt="" />
+    </div>
+
+    <!-- 主内容 -->
+    <div id="fullpage">
+      <div class="section">
+        <div class="content"></div>
+        <img class="stripe1" src="./img/stripe1.png" alt="" />
+        <img class="stripe2" src="./img/stripe2.png" alt="" />
+        <img class="leaf" src="./img/leaf.png" alt="" />
+        <img class="girl girl1" id="girl1" src="./img/girl1.png" alt="" />
+        <img class="lotus" src="./img/lotus.png" alt="" />
+        <img class="camera" src="./img/camera.png" alt="" />
+        <img class="title" id="page1_title" src="./img/title.png" alt="" />
+        <div class="content" id="content">
+          <span>4</span>月<span>20</span>日<br />
+          大概是个很特别的日子<br />
+          这一天<br />
+          许久未联系的我们<br />
+          突然有了交集
+        </div>
+      </div>
+      <div class="section">
+        <img class="stripe1" src="./img/stripe1.png" alt="" />
+        <img class="stripe2" src="./img/stripe2.png" alt="" />
+        <img class="leaf" src="./img/leaf.png" alt="" />
+        <img class="girl girl2" id="girl2" src="./img/girl2.png" alt="" />
+        <img class="lotus" src="./img/lotus.png" alt="" />
+        <img class="star" src="./img/star.png" alt="" />
+        <img class="glass" src="./img/glass.png" alt="" />
+        <div class="page2_top" id="page2_top">
+          <div>从一开始的家长里短</div>
+          <div>到后面的生活分享</div>
+          <div>点点滴滴</div>
+          <div>都让我感受到温馨</div>
+        </div>
+        <div class="page2_bottom" id="page2_bottom">
+          <div>和你在一起的每一天</div>
+          <div>都值得纪念</div>
+          <div>很<span style="color: #f1634c">开心</span>在这段时间里</div>
+          <div>能陪你同行</div>
+        </div>
+      </div>
+      <div class="section">
+        <img class="stripe1" src="./img/stripe1.png" alt="" />
+        <img class="stripe2" src="./img/stripe2.png" alt="" />
+        <img class="leaf" src="./img/leaf.png" alt="" />
+        <img class="girl girl3" id="girl3" src="./img/girl3.png" alt="" />
+        <img class="lotus" src="./img/lotus.png" alt="" />
+        <img class="flower" src="./img/flower.png" alt="" />
+        <img class="letter" src="./img/letter.png" alt="" />
+        <div class="page3_content">
+          <div id="source" style="position: fixed; left: -9999px">
+            还能想起<br />你来北京的前一天晚上<br />紧张激动的感受<br />以及见面时候的欢喜<br />
+            想起在地铁上第一次拉起你的手</br>以及第一次的接吻</br>我一辈子都不会忘记
+          </div>
+          <div id="output-wrap">
+            <span id="output"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <img class="stripe1" src="./img/stripe1.png" alt="" />
+        <img class="stripe2" src="./img/stripe2.png" alt="" />
+        <img class="leaf" src="./img/leaf.png" alt="" />
+        <img class="paper" id="paper" src="./img/paper.png" alt="" />
+        <div class="envelope" id="envelope">
+          <img class="envelope-img" src="./img/envelope.png" alt="" />
+        </div>
+        <img class="cloud cloud1" id="cloud1" src="./img/cloud1.png" alt="" />
+        <img class="cloud cloud2" id="cloud2" src="./img/cloud2.png" alt="" />
+        <img class="cloud cloud3" id="cloud3" src="./img/cloud3.png" alt="" />
+        <img
+          class="star2 zoomInToOut"
+          id="star2"
+          src="./img/star2.png"
+          alt=""
+        />
+        <img class="sun" id="sun" src="./img/sun.png" alt="" />
+        <img class="girl girl4" id="girl4" src="./img/girl4.png" alt="" />
+        <div class="page4_content">
+          <div id="source2" style="position: fixed; left: -9999px">
+            和你一起在北京生活的短短 12天，第一次感受到一个不一样
+            的家。每天下班后，都迫不及待 想要回来见你。想要给你买好吃的。真的很想照顾你一辈子。
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当送你上飞机离开后，真的就很舍不得你，好想不顾一切和你一起走
+          </div>
+          <div id="output-wrap2" class="output-wrap">
+            <span id="output2"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <img class="stripe1" src="./img/stripe1.png" alt="" />
+        <img class="stripe2" src="./img/stripe2.png" alt="" />
+        <img class="leaf" src="./img/leaf.png" alt="" />
+        <img class="calendar" src="./img/calendar.png" alt="" />
+        <img class="love-star1 zoomInToOut" src="./img/love-star.png" alt="" />
+        <img class="love-star2 zoomInToOut" src="./img/love-star.png" alt="" />
+        <div class="qixiFun">七夕快乐</div>
+        <div class="page5_content" id="page5_content">
+          想说的话太多，最后，在这个特殊的日子里，希望你以后可以天天开心
+          不要太辛苦了，工作和生活，都会顺顺利利的，你肯定会觉得，我说来说去都是这些，哈哈那我在送一个小礼物，嘿嘿~
+        </div>
+        <div class="btn" id="btn">开启红包</div>
+        <img class="girl girl5" src="./img/girl5.png" alt="" />
+      </div>
+    </div>
+
+    <!-- 礼物 -->
+    <div class="gift" id="gift">
+      <div class="money" id="money">
+        <img src="./img/money.png" alt="" />
+        <div class="btn2" id="btn2">红包点这里</div>
+      </div>
+      <img class="close" id="close" src="./img/close.png" alt="" />
+    </div>
+  </body>
+  <script>
+    const WIDTH = 750; //设计稿尺寸
+    const setView = () => {
+      document.documentElement.style.fontSize =
+        (100 * screen.width) / WIDTH + "px";
+    };
+    window.onorientationchange = setView;
+    window.addEventListener("resize", () => {
+      setView();
+    });
+    setView();
+    setTimeout(() => {
+      $("#loading").css("display", "none");
+    }, 1500);
+
+    document.addEventListener("WeixinJSBridgeReady", function () {
+      let audio = document.getElementById('musicStar');
+	    audio.play();
+		    /**musicStar为音乐audio的 id**/
+	    }, false);
+  </script>
+  <script>
+    let flag = true;
+    let flag2 = true;
+    $(function () {
+      // 滚屏动画
+      $("#fullpage").fullpage({
+        start: 0,
+        afterLoad: (anchorLink, { index }) => {
+          switch (index) {
+            case 0:
+              $("#page1_title").addClass("fadeInDowntoDown");
+              $("#content").addClass("fadeIn");
+              $("#girl1").addClass("fadeInToLeft2");
+
+              $("#girl2").removeClass("fadeIn2");
+              $("#page2_top").removeClass("fadeInToLeft");
+              $("#page2_bottom").removeClass("fadeInToLeft2");
+
+              break;
+            case 1:
+              $("#page1_title").removeClass("fadeInDowntoDown");
+              $("#content").removeClass("fadeIn");
+              $("#girl1").removeClass("fadeInToLeft2");
+              $("#girl3").removeClass("fadeIn");
+
+              $("#girl2").addClass("fadeIn2");
+              $("#page2_top").addClass("fadeInToLeft");
+              $("#page2_bottom").addClass("fadeInToLeft2");
+
+              break;
+            case 2:
+              $("#girl2").removeClass("fadeIn2");
+              $("#page2_top").removeClass("fadeInToLeft");
+              $("#page2_bottom").removeClass("fadeInToLeft2");
+              $("#paper").removeClass("fadeInDowntoDown");
+              $("#envelope").removeClass("fadeInDowntoUp");
+              $("#cloud1").removeClass("fadeInDowntoUp");
+              $("#cloud2").removeClass("fadeInDowntoUp");
+              $("#cloud3").removeClass("fadeInDowntoUp");
+              $("#output-wrap2").removeClass("fadeIn");
+              $("#star2").removeClass("zoomInToOut");
+
+              $("#girl3").addClass("fadeIn");
+
+              var typing = new Typing({
+                source: document.getElementById("source"),
+                output: document.getElementById("output"),
+                delay: 80
+              });
+              flag && typing.start();
+              flag = false;
+              break;
+            case 3:
+              $("#girl3").removeClass("fadeIn");
+
+              $("#girl4").addClass("fadeIn");
+              $("#paper").addClass("fadeInDowntoDown");
+              $("#envelope").addClass("fadeInDowntoUp");
+              $("#cloud1").addClass("fadeInDowntoUp");
+              $("#cloud2").addClass("fadeInDowntoUp");
+              $("#cloud3").addClass("fadeInDowntoUp");
+              $("#star2").addClass("zoomInToOut");
+              $("#output-wrap2").addClass("fadeIn");
+              $("#page5_content").removeClass("fadeIn");
+              $("#btn").removeClass("fadeInDowntoUp");
+
+              var typing2 = new Typing({
+                source: document.getElementById("source2"),
+                output: document.getElementById("output2"),
+                delay: 80
+              });
+              flag2 && typing2.start();
+              flag2 = false;
+              break;
+            case 4:
+              $("#output-wrap2").removeClass("fadeIn");
+              $("#cloud1").removeClass("fadeInDowntoUp");
+              $("#cloud2").removeClass("fadeInDowntoUp");
+              $("#cloud3").removeClass("fadeInDowntoUp");
+              $("#paper").removeClass("fadeInDowntoDown");
+              $("#envelope").removeClass("fadeInDowntoUp");
+              $("#star2").removeClass("zoomInToOut");
+              $("#page5_content").addClass("fadeIn");
+              $("#btn").addClass("fadeInDowntoUp");
+
+              break;
+            default:
+          }
+        },
+        onLeave: (v, e, direction) => {}
+      });
+    });
+
+    // 开启红包
+    $("#btn").click(() => {
+      $("#gift").css("display", "flex");
+      $("#money").addClass("tureeDFlip");
+      $("#close").addClass("tureeDFlip");
+    });
+
+    $("#close").click(() => {
+      $("#gift").css("display", "none");
+      $("#money").removeClass("tureeDFlip");
+      $("#close").removeClass("tureeDFlip");
+    });
+
+    $("#btn2").click(()=>{
+      window.location.href = "./resoult.html"
+    })
+  </script>
+</html>
