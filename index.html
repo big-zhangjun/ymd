@@ -4,283 +4,479 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>七夕快乐，天天开心~</title>
-    <!--引入fullpage.js插件的样式，必须-->
-    <!-- <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.css"
-    /> -->
-    <script src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/fullpage.min.js"></script>
-    <script src="js/typing.min.js"></script>
+    <title>生日快乐~</title>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
-    <link rel="stylesheet" href="./css/animation.css" />
-    <link rel="stylesheet" href="./css/index.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overflow: hidden;
+      }
+
+      .container {
+        background: linear-gradient(#07112c, #2355d6);
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .land {
+        position: relative;
+        z-index: 20;
+        height: 60vh;
+        margin-top: 75vh;
+        width: 300%;
+        background: linear-gradient(#072945 0%, #000 30%);
+        border-radius: 50%;
+        margin-left: -100vw;
+      }
+
+      .happy-birthday__container {
+        position: absolute;
+        top: 130px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        opacity: 0.6;
+        transition: all 2s;
+      }
+
+      .happy-birthday__container > div {
+        height: 100px;
+        width: 100px;
+        margin: 0 10px;
+        flex: 0 1 auto;
+      }
+
+      .person {
+        position: absolute;
+        z-index: 99;
+        top: calc(75vh - 100px);
+        left: calc(50vw - 30px);
+        height: 100px;
+        width: 60px;
+      }
+
+      .person-reflect {
+        -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left
+              bottom, from(transparent), to(rgba(0, 0, 0, 0.6)));
+      }
+
+      .head {
+        position: relative;
+        height: 40px;
+        width: 40px;
+        background-color: #000;
+        border-radius: 50%;
+        margin-left: 10px;
+        z-index: 99;
+      }
+
+      .body-container {
+        margin-left: 15px;
+        margin-top: -10px;
+        width: 30px;
+        position: relative;
+        z-index: 20;
+      }
+
+      .body-content {
+        width: 100%;
+        height: 35px;
+        background-color: #000;
+      }
+
+      .body-radius {
+        width: 100%;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #000;
+        margin-top: -5px;
+      }
+
+      .legs {
+        margin-left: 15px;
+        margin-top: -6px;
+        height: 30px;
+        width: 36px;
+      }
+
+      .left {
+        display: inline-block;
+        border-right: 7px solid transparent;
+        border-left: 5px solid transparent;
+        border-top: 35px solid #000;
+      }
+
+      .right {
+        display: inline-block;
+        border-right: 6px solid transparent;
+        border-left: 7px solid transparent;
+        border-top: 35px solid #000;
+      }
+
+      .left-hand {
+        position: absolute;
+        height: 35px;
+        width: 10px;
+        background-color: #000;
+        border-radius: 50%;
+        left: 10px;
+        top: 35px;
+        z-index: 1;
+      }
+
+      .right-hand {
+        position: absolute;
+        width: 9px;
+        height: 50px;
+        background-color: #000;
+        left: 45px;
+        top: 7px;
+        border-radius: 50%;
+        transform: rotate(20deg);
+        z-index: 1;
+      }
+
+      .person-show > .head {
+        background: linear-gradient(#072253, rgb(20, 19, 65));
+      }
+
+      .person-show > .body-container > div {
+        background-color: rgb(20, 19, 65);
+      }
+
+      .person-show > .left-hand,
+      .right-hand {
+        background-color: rgb(20, 19, 65);
+      }
+
+      .person-show .legs > div {
+        border-top-color: #151618;
+      }
+      .fadeIn {
+        animation: fade-in 3s both 1000ms alternate;
+      }
+      .fadeIn2 {
+        animation: fade-in 3s both 4000ms alternate;
+      }
+      .fadeIn3 {
+        animation: fade-in 3s both 7000ms alternate;
+      }
+      .fadeIn4 {
+        animation: fade-in 3s both 10000ms alternate;
+      }
+      .fadeIn5 {
+        animation: fade-in 3s both 13000ms alternate;
+      }
+      .fadeIn6 {
+        animation: fade-in 3s both 16000ms alternate;
+      }
+      .fadeIn7 {
+        animation: fade-in 3s both 19000ms alternate;
+      }
+      .fadeIn8 {
+        animation: fade-in 3s both 22000ms alternate;
+      }
+      .fadeIn9 {
+        animation: fade-in 3s both 25000ms alternate;
+      }
+      .fadeIn10 {
+        animation: fade-in 3s both 28000ms alternate;
+      }
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes star-scale {
+        from {
+          transform: scale(1, 1);
+        }
+
+        25% {
+          transform: scale(0.1, 0.1);
+        }
+
+        50% {
+          transform: scale(1, 1);
+        }
+
+        25% {
+          transform: scale(2, 2);
+        }
+
+        to {
+          transform: scale(1, 1);
+        }
+      }
+
+      .star {
+        height: 3px;
+        width: 3px;
+        background-color: #faf89d;
+        border-radius: 50%;
+        position: absolute;
+        animation: star-scale 2s;
+        animation-iteration-count: infinite;
+      }
+      .bmt {
+        position: absolute;
+        z-index: 99;
+        width: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 7.8vh;
+      }
+      .shade {
+        position: absolute;
+        z-index: 99;
+        width: 50px;
+        left: 50.5%;
+        transform: translateX(-50%);
+        bottom: 6vh;
+      }
+      #my-canvas {
+        position: absolute;
+        width: 100%;
+        height: 80vh;
+      }
+      .font {
+        position: fixed;
+        top: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4rem;
+      }
+      .font2 {
+        position: fixed;
+        top: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5rem;
+      }
+      .font3 {
+        position: fixed;
+        top: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6rem;
+      }
+      .f4 {
+        width: 3rem;
+      }
+      .name {
+        color: #faf89d;
+        font-size: .4rem;
+        text-align: center;
+        display: block;
+        margin-top: 100px;
+      }
+    </style>
   </head>
+
   <body>
-    <!-- bgm -->
     <audio
       id="musicStar"
-      src="https://zino-common.oss-cn-beijing.aliyuncs.com/minib/bgm.mp3"
+      src="./img/wt.mp3"
       autoplay="true"
       preload="auto"
       loop="loop"
     ></audio>
-    <div class="animate-wrapper rotate">
-      <img src="./img/audio.png" alt="" />
+    <div class="container">
+      <span class="name font fadeIn">在这个特殊的日子里</span>
+      <span class="name font2 fadeIn2">愿你收获所有的祝福，装满你的心愿。</span>
+      <span class="name font2 fadeIn3">生日快乐</span>
+      <!-- <img class="font fadeIn" src="./img/font.png" alt="" />
+      <img class="font2 fadeIn3" src="./img/f1.png" alt="" />
+      <img class="font f4 fadeIn4" src="./img/f2.png" alt="" />
+      <img class="font3 fadeIn5" src="./img/f3.png" alt="" />
+      <img class="font fadeIn6" src="./img/f4.png" alt="" />
+      <img class="font3 fadeIn7" src="./img/f5.png" alt="" />
+      <img class="font3 fadeIn8" src="./img/f6.png" alt="" />
+      <img class="font3 fadeIn9" src="./img/f7.png" alt="" />
+      <img class="font2 fadeIn2" src="./img/font3.png" alt="" />
+      <img class="font f4 fadeIn10" src="./img/f8.png" alt="" /> -->
+      <canvas id="my-canvas"></canvas>
+      <img class="bmt" src="./img/bmt2.png" alt="" />
+      <div class="land"></div>
     </div>
-
-    <!-- 加载 -->
-    <div class="loadIng" id="loading">
-      <img src="./img/loading2.gif" alt="" />
-    </div>
-
-    <!-- 主内容 -->
-    <div id="fullpage">
-      <div class="section">
-        <div class="content"></div>
-        <img class="stripe1" src="./img/stripe1.png" alt="" />
-        <img class="stripe2" src="./img/stripe2.png" alt="" />
-        <img class="leaf" src="./img/leaf.png" alt="" />
-        <img class="girl girl1" id="girl1" src="./img/girl1.png" alt="" />
-        <img class="lotus" src="./img/lotus.png" alt="" />
-        <img class="camera" src="./img/camera.png" alt="" />
-        <img class="title" id="page1_title" src="./img/title.png" alt="" />
-        <div class="content" id="content">
-          <span>4</span>月<span>20</span>日<br />
-          大概是个很特别的日子<br />
-          这一天<br />
-          许久未联系的我们<br />
-          突然有了交集
-        </div>
-      </div>
-      <div class="section">
-        <img class="stripe1" src="./img/stripe1.png" alt="" />
-        <img class="stripe2" src="./img/stripe2.png" alt="" />
-        <img class="leaf" src="./img/leaf.png" alt="" />
-        <img class="girl girl2" id="girl2" src="./img/girl2.png" alt="" />
-        <img class="lotus" src="./img/lotus.png" alt="" />
-        <img class="star" src="./img/star.png" alt="" />
-        <img class="glass" src="./img/glass.png" alt="" />
-        <div class="page2_top" id="page2_top">
-          <div>从一开始的家长里短</div>
-          <div>到后面的生活分享</div>
-          <div>点点滴滴</div>
-          <div>都让我感受到温馨</div>
-        </div>
-        <div class="page2_bottom" id="page2_bottom">
-          <div>和你在一起的每一天</div>
-          <div>都值得纪念</div>
-          <div>很<span style="color: #f1634c">开心</span>在这段时间里</div>
-          <div>能陪你同行</div>
-        </div>
-      </div>
-      <div class="section">
-        <img class="stripe1" src="./img/stripe1.png" alt="" />
-        <img class="stripe2" src="./img/stripe2.png" alt="" />
-        <img class="leaf" src="./img/leaf.png" alt="" />
-        <img class="girl girl3" id="girl3" src="./img/girl3.png" alt="" />
-        <img class="lotus" src="./img/lotus.png" alt="" />
-        <img class="flower" src="./img/flower.png" alt="" />
-        <img class="letter" src="./img/letter.png" alt="" />
-        <div class="page3_content">
-          <div id="source" style="position: fixed; left: -9999px">
-            还能想起<br />你来北京的前一天晚上<br />紧张激动的感受<br />以及见面时候的欢喜<br />
-            想起在地铁上第一次拉起你的手</br>以及第一次的接吻</br>我一辈子都不会忘记
-          </div>
-          <div id="output-wrap">
-            <span id="output"></span>
-            <span class="typing-cursor">|</span>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <img class="stripe1" src="./img/stripe1.png" alt="" />
-        <img class="stripe2" src="./img/stripe2.png" alt="" />
-        <img class="leaf" src="./img/leaf.png" alt="" />
-        <img class="paper" id="paper" src="./img/paper.png" alt="" />
-        <div class="envelope" id="envelope">
-          <img class="envelope-img" src="./img/envelope.png" alt="" />
-        </div>
-        <img class="cloud cloud1" id="cloud1" src="./img/cloud1.png" alt="" />
-        <img class="cloud cloud2" id="cloud2" src="./img/cloud2.png" alt="" />
-        <img class="cloud cloud3" id="cloud3" src="./img/cloud3.png" alt="" />
-        <img
-          class="star2 zoomInToOut"
-          id="star2"
-          src="./img/star2.png"
-          alt=""
-        />
-        <img class="sun" id="sun" src="./img/sun.png" alt="" />
-        <img class="girl girl4" id="girl4" src="./img/girl4.png" alt="" />
-        <div class="page4_content">
-          <div id="source2" style="position: fixed; left: -9999px">
-            和你一起在北京生活的短短 12天，第一次感受到一个不一样
-            的家。每天下班后，都迫不及待 想要回来见你。想要给你买好吃的。真的很想照顾你一辈子。
-            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当送你上飞机离开后，真的就很舍不得你，好想不顾一切和你一起走
-          </div>
-          <div id="output-wrap2" class="output-wrap">
-            <span id="output2"></span>
-            <span class="typing-cursor">|</span>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <img class="stripe1" src="./img/stripe1.png" alt="" />
-        <img class="stripe2" src="./img/stripe2.png" alt="" />
-        <img class="leaf" src="./img/leaf.png" alt="" />
-        <img class="calendar" src="./img/calendar.png" alt="" />
-        <img class="love-star1 zoomInToOut" src="./img/love-star.png" alt="" />
-        <img class="love-star2 zoomInToOut" src="./img/love-star.png" alt="" />
-        <div class="qixiFun">七夕快乐</div>
-        <div class="page5_content" id="page5_content">
-          想说的话太多，最后，在这个特殊的日子里，希望你以后可以天天开心
-          不要太辛苦了，工作和生活，都会顺顺利利的，你肯定会觉得，我说来说去都是这些，哈哈那我在送一个小礼物，嘿嘿~
-        </div>
-        <div class="btn" id="btn">开启红包</div>
-        <img class="girl girl5" src="./img/girl5.png" alt="" />
-      </div>
-    </div>
-
-    <!-- 礼物 -->
-    <div class="gift" id="gift">
-      <div class="money" id="money">
-        <img src="./img/money.png" alt="" />
-        <div class="btn2" id="btn2">红包点这里</div>
-      </div>
-      <img class="close" id="close" src="./img/close.png" alt="" />
-    </div>
-  </body>
-  <script>
-    const WIDTH = 750; //设计稿尺寸
-    const setView = () => {
-      document.documentElement.style.fontSize =
-        (100 * screen.width) / WIDTH + "px";
-    };
-    window.onorientationchange = setView;
-    window.addEventListener("resize", () => {
-      setView();
-    });
-    setView();
-    setTimeout(() => {
-      $("#loading").css("display", "none");
-    }, 1500);
-
-    document.addEventListener("WeixinJSBridgeReady", function () {
-      let audio = document.getElementById('musicStar');
-	    audio.play();
-		    /**musicStar为音乐audio的 id**/
-	    }, false);
-  </script>
-  <script>
-    let flag = true;
-    let flag2 = true;
-    $(function () {
-      // 滚屏动画
-      $("#fullpage").fullpage({
-        start: 0,
-        afterLoad: (anchorLink, { index }) => {
-          switch (index) {
-            case 0:
-              $("#page1_title").addClass("fadeInDowntoDown");
-              $("#content").addClass("fadeIn");
-              $("#girl1").addClass("fadeInToLeft2");
-
-              $("#girl2").removeClass("fadeIn2");
-              $("#page2_top").removeClass("fadeInToLeft");
-              $("#page2_bottom").removeClass("fadeInToLeft2");
-
-              break;
-            case 1:
-              $("#page1_title").removeClass("fadeInDowntoDown");
-              $("#content").removeClass("fadeIn");
-              $("#girl1").removeClass("fadeInToLeft2");
-              $("#girl3").removeClass("fadeIn");
-
-              $("#girl2").addClass("fadeIn2");
-              $("#page2_top").addClass("fadeInToLeft");
-              $("#page2_bottom").addClass("fadeInToLeft2");
-
-              break;
-            case 2:
-              $("#girl2").removeClass("fadeIn2");
-              $("#page2_top").removeClass("fadeInToLeft");
-              $("#page2_bottom").removeClass("fadeInToLeft2");
-              $("#paper").removeClass("fadeInDowntoDown");
-              $("#envelope").removeClass("fadeInDowntoUp");
-              $("#cloud1").removeClass("fadeInDowntoUp");
-              $("#cloud2").removeClass("fadeInDowntoUp");
-              $("#cloud3").removeClass("fadeInDowntoUp");
-              $("#output-wrap2").removeClass("fadeIn");
-              $("#star2").removeClass("zoomInToOut");
-
-              $("#girl3").addClass("fadeIn");
-
-              var typing = new Typing({
-                source: document.getElementById("source"),
-                output: document.getElementById("output"),
-                delay: 80
-              });
-              flag && typing.start();
-              flag = false;
-              break;
-            case 3:
-              $("#girl3").removeClass("fadeIn");
-
-              $("#girl4").addClass("fadeIn");
-              $("#paper").addClass("fadeInDowntoDown");
-              $("#envelope").addClass("fadeInDowntoUp");
-              $("#cloud1").addClass("fadeInDowntoUp");
-              $("#cloud2").addClass("fadeInDowntoUp");
-              $("#cloud3").addClass("fadeInDowntoUp");
-              $("#star2").addClass("zoomInToOut");
-              $("#output-wrap2").addClass("fadeIn");
-              $("#page5_content").removeClass("fadeIn");
-              $("#btn").removeClass("fadeInDowntoUp");
-
-              var typing2 = new Typing({
-                source: document.getElementById("source2"),
-                output: document.getElementById("output2"),
-                delay: 80
-              });
-              flag2 && typing2.start();
-              flag2 = false;
-              break;
-            case 4:
-              $("#output-wrap2").removeClass("fadeIn");
-              $("#cloud1").removeClass("fadeInDowntoUp");
-              $("#cloud2").removeClass("fadeInDowntoUp");
-              $("#cloud3").removeClass("fadeInDowntoUp");
-              $("#paper").removeClass("fadeInDowntoDown");
-              $("#envelope").removeClass("fadeInDowntoUp");
-              $("#star2").removeClass("zoomInToOut");
-              $("#page5_content").addClass("fadeIn");
-              $("#btn").addClass("fadeInDowntoUp");
-
-              break;
-            default:
-          }
+    <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.2/dist/hanzi-writer.min.js"></script>
+    <script>
+      document.addEventListener(
+        "WeixinJSBridgeReady",
+        function () {
+          let audio = document.getElementById("musicStar");
+          audio.play();
+          /**musicStar为音乐audio的 id**/
         },
-        onLeave: (v, e, direction) => {}
+        false
+      );
+
+      const WIDTH = 750; //设计稿尺寸
+      const setView = () => {
+        document.documentElement.style.fontSize =
+          (100 * screen.width) / WIDTH + "px";
+      };
+      window.onorientationchange = setView;
+      window.addEventListener("resize", () => {
+        setView();
       });
-    });
+      setView();
+      // 烟花效果
+      var canvas = document.getElementById("my-canvas");
+      var context = canvas.getContext("2d");
 
-    // 开启红包
-    $("#btn").click(() => {
-      $("#gift").css("display", "flex");
-      $("#money").addClass("tureeDFlip");
-      $("#close").addClass("tureeDFlip");
-    });
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight * 0.8;
+      }
 
-    $("#close").click(() => {
-      $("#gift").css("display", "none");
-      $("#money").removeClass("tureeDFlip");
-      $("#close").removeClass("tureeDFlip");
-    });
+      function clearCanvas() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+      }
 
-    $("#btn2").click(()=>{
-      window.location.href = "./resoult.html"
-    })
-  </script>
+      window.addEventListener("resize", resizeCanvas, false);
+      resizeCanvas();
+
+      function mouseDownHandler(e) {
+        var x = e.clientX;
+        var y = e.clientY;
+        fire(x, y);
+      }
+      var rid;
+      function fire(x, y) {
+        createFireworks(x, y);
+        function tick() {
+          context.globalCompositeOperation = "destination-out";
+          context.fillStyle = "rgba(0, 0, 0," + 20 / 100 + ")";
+          context.fillRect(0, 0, canvas.width, canvas.height);
+          context.globalCompositeOperation = "lighter";
+          drawFireworks();
+          rid = requestAnimationFrame(tick);
+        }
+        cancelAnimationFrame(rid);
+        tick();
+      }
+      var particles = [];
+      function createFireworks(sx, sy) {
+        clearCanvas();
+        particles = [];
+        var hue = Math.floor(Math.random() * 51) + 150;
+        var hueVariance = 30;
+        var count = 365;
+        for (var i = 0; i < count; i++) {
+          var p = {};
+          var angle = Math.floor(Math.random() * 360);
+          p.radians = (angle * Math.PI) / 180;
+          p.x = sx;
+          p.y = sy;
+          p.speed = Math.random() * 5 + 0.4;
+          p.radius = p.speed;
+          p.size = Math.floor(Math.random() * 3) + 1;
+          p.hue =
+            Math.floor(
+              Math.random() * (hue + hueVariance - (hue - hueVariance))
+            ) +
+            (hue - hueVariance);
+          p.brightness = Math.floor(Math.random() * 31) + 50;
+          p.alpha = (Math.floor(Math.random() * 61) + 40) / 100;
+          particles.push(p);
+        }
+      }
+      function drawFireworks() {
+        for (var i = 0; i < particles.length; i++) {
+          var p = particles[i];
+          var vx = Math.cos(p.radians) * p.radius;
+          var vy = Math.sin(p.radians) * p.radius + 1.2;
+          p.x += vx;
+          p.y += vy;
+          p.radius *= 1 - p.speed / 300;
+          p.alpha -= 0.005;
+          context.beginPath();
+          context.arc(p.x, p.y, p.size, 0, Math.PI * 2, false);
+          context.closePath();
+          context.fillStyle =
+            "hsla(" +
+            p.hue +
+            100 +
+            ", 100%, " +
+            p.brightness +
+            "%, " +
+            p.alpha +
+            ")";
+          context.fill();
+        }
+      }
+      function fireRandom() {
+        const x = canvas.width * 0.7 * Math.random() + canvas.width * 0.2;
+        const y = canvas.height * 0.6 * Math.random() + canvas.height * 0.2;
+        fire(x, y);
+      }
+
+      document.addEventListener("mousedown", mouseDownHandler, false);
+
+      // 星星效果
+      function Star(type) {
+        this.speed = 1;
+        this.star = document.createElement("div");
+        this.star.className = type === "star" ? "star" : "moon";
+        this.star.style.top = "0px";
+        this.star.style.left = Math.random() * window.innerWidth + 1 + "px";
+        document.body.appendChild(this.star);
+      }
+      Star.prototype.down = function () {
+        var that = this;
+        function move() {
+          that.star.style.top = that.star.offsetTop + that.speed + "px";
+          if (that.star.offsetTop > window.innerHeight) {
+            clearInterval(timer);
+            document.body.removeChild(that.star);
+          }
+        }
+        var timer = setInterval(move, 25);
+      };
+      let starTimer = setInterval(() => {
+        new Star("star").down();
+      }, 300);
+
+      // 文字效果
+      const BASE_CONFIG = {
+        width: 100,
+        height: 100,
+        padding: 5,
+        delayBetweenStrokes: 0,
+        strokeAnimationSpeed: 1.2,
+        showCharacter: false,
+        showOutline: false
+      };
+      const WRITER_CONFIG = {
+        ...BASE_CONFIG,
+        strokeColor: "#e09037"
+      };
+
+      const NAME_CONFIG = {
+        ...BASE_CONFIG,
+        strokeColor: "#87db92"
+      };
+
+      setInterval(() => {
+        fireRandom();
+      }, 3000);
+
+      // const writerList = getWriterList();
+      // generateAnimateWriter(writerList);
+    </script>
+  </body>
 </html>
